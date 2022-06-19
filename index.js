@@ -36,5 +36,49 @@ class RangeValidator {
     );
   }
 }
-const range1 = new RangeValidator(1,20);
-console.log(range1.validate(10));
+// const range1 = new RangeValidator(1,20);
+// console.log(range1.validate(10));
+
+class Figure3D {
+  constructor(name) {
+    this.name = name;
+  }
+  getVolume() {
+    return null;
+  }
+}
+
+class Ball extends Figure3D {
+  constructor(radius) {
+    super("Ball");
+    this.radius = radius;
+  }
+  getVolume() {
+    return (4 / 3) * (Math.PI * Math.pow(this.radius, 3));
+  }
+}
+class Cylinder extends Figure3D {
+  constructor(height, square) {
+    super("Cylinder");
+    this.square = square;
+    this.height = height;
+  }
+  getVolume() {
+    return this.square * this.height;
+  }
+}
+class Cube extends Figure3D {
+  constructor(volume) {
+    super("Cube");
+    this.volume = volume;
+  }
+  getVolume() {
+    return Math.pow(this.volume, 3);
+  }
+}
+
+const ball = new Ball(3);
+const cylinder = new Cylinder(2, 5);
+
+console.log(cylinder.getVolume());
+console.log(ball.getVolume());
