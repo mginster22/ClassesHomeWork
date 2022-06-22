@@ -7,7 +7,7 @@ class RangeValidator {
     return this._to;
   }
   set to(to) {
-    if (typeof to === false) {
+    if (typeof to !== "number") {
       throw new TypeError("Error,to, must be a number");
     }
     if (to <= this._from) {
